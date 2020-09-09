@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    
+    <div class="container">
+      <div class="row">
+        {% for obj in record %}
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+              <img src="{{ obj.image.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{obj.name}}</h5>
+                <p class="card-text">{{obj.last_seen}}</p>
+                <a href="#" class="btn btn-primary" onclick="location.href='/details/{{obj.id}}'">More Details</a>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+      
+</div>
+
+{% endblock %}

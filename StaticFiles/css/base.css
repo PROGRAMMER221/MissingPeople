@@ -1,0 +1,29 @@
+.follow {
+    vertical-align: middle;
+  }
+
+  .btn-outline-fb {
+    color: blue;
+  }
+  
+  .btn-outline-fb:hover {
+    background-color:blue;
+    color:white;
+  }
+  
+  .btn-outline-insta {
+    color: #fb3958;
+  }
+  
+  .btn-outline-insta:hover {
+    background-color:#fb3958;
+    color:white;
+  }
+
+  .text-magenta {
+    color: #003f88;
+  }
+
+  .text-magenta:hover { 
+    color: #4361ee;
+  }

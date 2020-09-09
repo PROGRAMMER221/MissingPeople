@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>App For Missing People Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'font-aws/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <div>
+                <h1 class="d-inline mr-5">Taalash</h1>
+                <a href="/lost-person/" class="d-inline h3 text-magenta text-decoration-none">Lost Person</a>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% if request.user.is_authenticated %}
+                    <button class="btn btn-outline-danger mr-5" onclick="location.href='/logout/'">SignOut</button>
+                    {% else %}
+                    <button class="btn btn-outline-danger mr-5" onclick="location.href='/login/'">SignIn</button>
+                    {% endif %}
+                    <button class="btn btn-outline-danger" onclick="location.href='/'"><i class="fas fa-home"></i></button>
+                </div>
+            </div>
+        </nav>
+
+        {% include 'message.html' %}
+
+        {% block content %}
+            <div class="container mt-5 pt-4 text-center">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-success border-0" onclick="location.href='/my-entries/'"><i class="far fa-list-alt fa-8x"></i></button>
+                    </div>
+                </div>
+                <div class="row h4 text-danger">
+                    <div class="col">
+                        <a href="/my-entries/" class="text-decoration-none text-danger h4">My Entries</a>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <button class="btn btn-outline-success border-0" onclick="location.href='/record/'"><i class="fas fa-user-shield fa-8x"></i></button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-outline-success border-0" onclick="location.href='/signup/'"><i class="fas fa-edit fa-8x"></i></button>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col">
+                        <a href="/record/" class="text-decoration-none text-danger h4">Report Missing</a>
+                    </div>
+                    <div class="col">
+                        <a href="/signup/" class="text-decoration-none text-danger h4">Registration</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-success border-0" onclick="location.href='/found-people'"><i class="fas fa-user-times fa-8x"></i></button>
+                    </div>
+                </div>
+                <div class="row h4 text-danger">
+                    <div class="col">
+                        <a href="/found-people/" class="text-decoration-none text-danger h4">Found People</a>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        <div class="pt-5 pb-5 container-fluid mt-5" style="background-color: whitesmoke;">
+            <div class="container">
+                <div class="d-inline mr-2">
+                    <span style="font-size:12pt; color:blue;">Follow Us</span> 
+                    <span class="follow">
+                        <button class="btn btn-outline-fb"><i class="fab fa-facebook-square fa-2x"></i></button>
+                        <button class="btn btn-outline-insta"><i class="fab fa-instagram-square fa-2x"></i></button>
+                        <button class="btn btn-outline-primary border-0"><i class="fab fa-twitter-square fa-2x"></i></button>
+                    </span>
+                </div>
+                <div class="d-inline float-right">
+                    <span class="mr-4">&#169; Taalash</span>
+                    <span class="mr-4">Terms</span>
+                    <span class="mr-4">Privacy</span>
+                    <span>Legal</span>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'font-aws/all.js' %}"></script>
+</html>
