@@ -12,20 +12,19 @@
     
     </head>
     <body>
-        <div class="container-fluid d-flex p-3 bg-light justify-content-between">
-            <div>
-                <h1 class="d-inline mr-5">Taalash</h1>
-                <a href="/lost-person/" class="d-inline h3 text-magenta text-decoration-none">Lost Person</a>
-            </div>
-            <div>
+        
+        <ul>
+            <li><a href="/" class="link">Taalash</a></li>
+            <li><a href="/lost-person/" class="link">Lost Person</a></li>
+            <li class="float-right"><a href="/" class="active"><i class="fas fa-home"></i></a></li>
+            <li class="float-right">
                 {% if request.user.is_authenticated %}
-                <button class="btn btn-outline-danger mr-5" onclick="location.href='/logout/'">SignOut</button>
+                    <a href='/logout/' class="link">SignOut</a>
                 {% else %}
-                    <button class="btn btn-outline-danger mr-5" onclick="location.href='/login/'">SignIn</button>
+                    <a href='/login/' class="link">SignIn</a>
                 {% endif %}
-                <button class="btn btn-outline-danger" onclick="location.href='/'"><i class="fas fa-home"></i></button>
-            </div>
-        </div>
+            </li>            
+        </ul>
 
         {% include 'message.html' %}
 
@@ -69,6 +68,7 @@
                 </div>
             </div>
         {% endblock %}
+        <br>
         <div class="pt-5 pb-5 container-fluid mt-5" style="background-color: whitesmoke;">
             <div class="container">
                 <div class="d-inline mr-2">
@@ -86,7 +86,7 @@
                     <span>Legal</span>
                 </div>
             </div>
-            <br>
+            
         </div>
     </body>
 

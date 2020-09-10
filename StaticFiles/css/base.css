@@ -27,3 +27,42 @@
   .text-magenta:hover { 
     color: #4361ee;
   }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: 16pt;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+  
+li a:hover:not(.active) {
+  background-color: #111;
+  text-decoration : none;
+  color: aliceblue;
+}  
+  
+.active {
+  background-color: #4CAF50;
+}
+
+.active:hover {
+  color: black;
+  background-color: #7ed680;
+}
+
+
+
